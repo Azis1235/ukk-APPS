@@ -1,0 +1,17 @@
+# SchoolVoice .htaccess - Security & Routing
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive directories
+<IfModule mod_authz_core.c>
+    <Files ~ "^\.">
+        Require all denied
+    </Files>
+    <Files "database.sql">
+        Require all denied
+    </Files>
+</IfModule>
+
+RewriteEngine On
+# You can add clean URL rules here if desired in the future

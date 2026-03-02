@@ -1,6 +1,4 @@
-CREATE DATABASE IF NOT EXISTS pengaduan_sample;
-USE pengaduan_sample;
-
+-- SchoolVoice Database Schema
 -- Table structure for table `users`
 CREATE TABLE IF NOT EXISTS `users` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
@@ -25,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `aspirasi` (
   `id_kategori` int(11) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
-  `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` enum('pending','proses','selesai','ditolak') NOT NULL DEFAULT 'pending',
   `fotobukti` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_aspirasi`),
@@ -39,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `id_aspirasi` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `pesan` text NOT NULL,
-  `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_feedback`),
   FOREIGN KEY (`id_aspirasi`) REFERENCES `aspirasi` (`id_aspirasi`) ON DELETE CASCADE,
   FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE
