@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar -->
+
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="logo-box">S</div>
@@ -17,7 +17,7 @@
             </div>
             <nav>
                 <a href="index.php?page=admin_dashboard">
-                    <span>📊</span> Dashboard
+                    <span>📊</span> Dashboard \
                 </a>
                 <a href="index.php?page=admin_aspirasi" class="active">
                     <span>📁</span> Data Aspirasi
