@@ -6,5 +6,8 @@
  * yang berada di root folder.
  */
 
+// Berpindah ke folder utama agar require relative tetap bekerja
+chdir(__DIR__ . '/..');
+
 // Sertakan file index.php utama
-require __DIR__ . '/../index.php';
+require 'index.php';

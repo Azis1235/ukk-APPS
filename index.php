@@ -6,7 +6,7 @@
  * semua permintaan URL dan mengarahkannya ke controller yang sesuai.
  */
 
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+$page = (isset($_GET['page']) && $_GET['page'] !== '') ? $_GET['page'] : 'home';
 
 switch ($page) {
     case 'home':
