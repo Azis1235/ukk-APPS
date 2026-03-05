@@ -27,31 +27,83 @@
         }
         
         /* New additions for modern dashboard */
+        /* Enhanced matching home.php */
         .dashboard-header {
             background: rgba(255, 255, 255, 0.8) !important;
             backdrop-filter: blur(12px) !important;
             -webkit-backdrop-filter: blur(12px) !important;
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-            margin: -32px -32px 32px -32px !important; /* Offset main-content padding */
-            padding: 24px 32px !important;
+            border-bottom: 1px solid #f1f5f9;
+            margin: -32px -32px 32px -32px !important;
+            padding: 32px 40px !important;
+        }
+
+        .dashboard-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .dashboard-header p {
+            color: #64748b;
+            font-size: 16px;
         }
 
         .stat-card {
             background: #ffffff;
             border: 1px solid #f1f5f9;
+            padding: 32px;
+            border-radius: 24px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+            pointer-events: none;
         }
 
         .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #e2e8f0;
+        }
+
+        .stat-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .stat-card .value {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -1px;
         }
 
         .card-base {
             background: #ffffff;
             border: 1px solid #f1f5f9;
+            border-radius: 24px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .card-base:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
@@ -98,23 +150,23 @@
             <!-- Stats Cards Simplification -->
             <section class="stats-grid fade-in" style="animation-delay: 0.1s;">
                 <div class="stat-card">
-                    <div style="font-size: 24px; margin-bottom: 16px;">📁</div>
-                    <h3 style="margin-bottom: 12px;">Total Aspirasi</h3>
+                    <div style="font-size: 32px; margin-bottom: 16px;">📁</div>
+                    <h3 style="margin-bottom: 8px;">Total Aspirasi</h3>
                     <div class="value"><?php echo $stats['total']; ?></div>
                 </div>
                 <div class="stat-card" style="border-bottom: 4px solid var(--warning);">
-                    <div style="font-size: 24px; margin-bottom: 16px;">⏳</div>
-                    <h3 style="margin-bottom: 12px;">Menunggu</h3>
+                    <div style="font-size: 32px; margin-bottom: 16px;">⏳</div>
+                    <h3 style="margin-bottom: 8px;">Menunggu</h3>
                     <div class="value" style="color: var(--warning);"><?php echo $stats['pending']; ?></div>
                 </div>
                 <div class="stat-card" style="border-bottom: 4px solid var(--info);">
-                    <div style="font-size: 24px; margin-bottom: 16px;">🔄</div>
-                    <h3 style="margin-bottom: 12px;">Diproses</h3>
+                    <div style="font-size: 32px; margin-bottom: 16px;">🔄</div>
+                    <h3 style="margin-bottom: 8px;">Diproses</h3>
                     <div class="value" style="color: var(--info);"><?php echo $stats['proses']; ?></div>
                 </div>
                 <div class="stat-card" style="border-bottom: 4px solid var(--success);">
-                    <div style="font-size: 24px; margin-bottom: 16px;">✅</div>
-                    <h3 style="margin-bottom: 12px;">Selesai</h3>
+                    <div style="font-size: 32px; margin-bottom: 16px;">✅</div>
+                    <h3 style="margin-bottom: 8px;">Selesai</h3>
                     <div class="value" style="color: var(--success);"><?php echo $stats['selesai']; ?></div>
                 </div>
             </section>
