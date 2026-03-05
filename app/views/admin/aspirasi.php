@@ -8,8 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="app-container">
-
+    <div class="app-container"> 
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="logo-box">S</div>
