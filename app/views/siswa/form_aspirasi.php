@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div style="background: white; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50;">
+</head>
+<body style="background-color: #f8fafc;">
+    <div style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); position: sticky; top: 0; z-index: 50;">
         <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
             <a href="index.php?page=siswa_dashboard" style="text-decoration: none; color: var(--text-primary); font-weight: 600; display: flex; align-items: center; gap: 10px; font-size: 14px; padding: 10px 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.background='white'; this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.transform='translateX(-5px)'; this.style.boxShadow='0 12px 20px -5px rgba(59, 130, 246, 0.15)';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0'; this.style.color='var(--text-primary)'; this.style.transform='translateX(0)'; this.style.boxShadow='none';">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
@@ -28,7 +29,7 @@
                 <p style="color: var(--text-secondary); font-size: 15px;">Sampaikan aspirasi atau keluhanmu dengan detail agar segera kami tindak lanjuti.</p>
             </header>
 
-            <div class="card-base" style="padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);">
+            <div class="card-base" style="background: #ffffff; padding: 40px; border-radius: 16px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
                 <form action="index.php?page=store_aspirasi" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="judul">Judul Laporan</label>

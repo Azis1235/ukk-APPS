@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Siswa - SchoolVoice</title>
     <link rel="stylesheet" href="public/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0ea5e9;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --border-color: #f1f5f9;
         }
 
         body.login-siswa {
@@ -21,107 +24,51 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Outfit', sans-serif;
-            background: #0f172a;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-color);
             position: relative;
-            overflow: hidden;
-            color: #f8fafc;
-        }
-
-        /* Animated Background Elements */
-        .blob {
-            position: absolute;
-            filter: blur(80px);
-            z-index: 0;
-            border-radius: 50%;
-            animation: float 10s infinite ease-in-out alternate;
-        }
-
-        .blob-1 {
-            width: 400px;
-            height: 400px;
-            background: rgba(14, 165, 233, 0.35); /* Sky Blue */
-            top: -100px;
-            right: -100px;
-        }
-
-        .blob-2 {
-            width: 300px;
-            height: 300px;
-            background: rgba(16, 185, 129, 0.3); /* Emerald */
-            bottom: -50px;
-            left: -50px;
-            animation-delay: -5s;
-        }
-        
-        .blob-3 {
-            width: 350px;
-            height: 350px;
-            background: rgba(99, 102, 241, 0.25); /* Indigo */
-            bottom: 20%;
-            right: 20%;
-            animation-duration: 15s;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-30px, 50px) scale(1.1); }
+            color: var(--text-primary);
         }
 
         .login-card-siswa {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             padding: 48px;
             border-radius: 24px;
             width: 100%;
             max-width: 420px;
-            box-shadow: var(--glass-shadow);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 20px 25px -5px rgba(0,0,0,0.05);
             z-index: 1;
             position: relative;
         }
 
         .siswa-icon {
-            background: linear-gradient(135deg, #0ea5e9, #10b981);
+            background: #1e293b;
             color: white;
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 32px auto;
-            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.5);
-            position: relative;
-        }
-        
-        .siswa-icon::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 24px;
-            background: linear-gradient(135deg, #0ea5e9, #10b981);
-            filter: blur(12px);
-            opacity: 0.5;
-            z-index: -1;
+            box-shadow: 0 10px 15px -3px rgba(30, 41, 59, 0.2);
         }
 
         .login-siswa h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #ffffff;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
             margin-bottom: 8px;
             text-align: center;
             letter-spacing: -0.5px;
         }
 
         .login-siswa p {
-            color: #94a3b8;
+            color: var(--text-secondary);
             font-size: 15px;
             text-align: center;
             margin-bottom: 40px;
-            font-weight: 300;
         }
 
         .form-group-siswa {
@@ -130,20 +77,19 @@
 
         .form-group-siswa label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 14px;
-            font-weight: 500;
-            color: #e2e8f0;
-            letter-spacing: 0.5px;
+            font-weight: 600;
+            color: var(--text-primary);
         }
 
         .form-control-siswa {
             width: 100%;
             padding: 14px 18px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
-            color: #ffffff;
+            color: var(--text-primary);
             font-family: inherit;
             font-size: 15px;
             transition: all 0.3s ease;
@@ -151,25 +97,24 @@
         }
 
         .form-control-siswa::placeholder {
-            color: #64748b;
+            color: #94a3b8;
         }
 
         .form-control-siswa:focus {
             outline: none;
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
 
         .btn-siswa {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, #0ea5e9, #2563eb);
+            background: var(--accent);
             color: white;
             border: none;
             border-radius: 12px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 16px;
@@ -177,27 +122,13 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-siswa::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: all 0.5s ease;
-        }
-
-        .btn-siswa:hover::before {
-            left: 100%;
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
         }
 
         .btn-siswa:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
+            background: var(--accent-hover);
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3);
         }
 
         .error-msg, .success-msg {
@@ -209,20 +140,18 @@
             align-items: center;
             gap: 12px;
             font-weight: 500;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .error-msg {
-            background: rgba(225, 29, 72, 0.1);
-            color: #fda4af;
-            border: 1px solid rgba(225, 29, 72, 0.2);
+            background: #fff1f2;
+            color: #e11d48;
+            border: 1px solid #ffe4e6;
         }
 
         .success-msg {
-            background: rgba(22, 163, 74, 0.1);
-            color: #86efac;
-            border: 1px solid rgba(22, 163, 74, 0.2);
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #dcfce7;
         }
 
         .back-link {
@@ -231,15 +160,15 @@
             justify-content: center;
             gap: 8px;
             margin-top: 32px;
-            color: #94a3b8;
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .back-link:hover {
-            color: #ffffff;
+            color: var(--text-primary);
             transform: translateX(-4px);
         }
 
@@ -253,7 +182,7 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            color: #94a3b8;
+            color: var(--text-secondary);
             background: none;
             border: none;
             padding: 8px;
@@ -265,10 +194,10 @@
         }
 
         .toggle-password:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            background: #f1f5f9;
         }
-        
+
         .fade-in {
             animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
@@ -284,10 +213,6 @@
     </style>
 </head>
 <body class="login-siswa">
-    <!-- Animated Background Blobs -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
 
     <div class="login-card-siswa fade-in">
         <div class="siswa-icon">

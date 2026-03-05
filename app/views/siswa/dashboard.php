@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div style="background: white; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50;">
+<body style="background-color: #f8fafc;">
+    <div style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); position: sticky; top: 0; z-index: 50;">
         <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
             <div style="font-weight: 700; font-size: 18px; color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
                 <span style="background: var(--sidebar-bg); color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">S</span>
@@ -43,7 +43,7 @@
                 </div>
             <?php else: ?>
                 <?php foreach ($aspirasi_list as $row): ?>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="transition: all 0.3s ease;">
                         <div class="timeline-icon">
                             <?php if($row['status'] == 'selesai'): ?>
                                 <span style="color: var(--success);">✓</span>
@@ -53,7 +53,7 @@
                                 <span style="color: var(--warning);">⏳</span>
                             <?php endif; ?>
                         </div>
-                        <div class="timeline-content">
+                        <div class="timeline-content" style="background: #ffffff; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 15px -3px rgba(0, 0, 0, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px -1px rgba(0, 0, 0, 0.05)';">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
                                 <span class="badge badge-<?php echo $row['status']; ?>"><?php echo ucfirst($row['status']); ?></span>
                                 <small style="color: var(--text-secondary);"><?php echo date('d M Y, H:i', strtotime($row['tanggal'])); ?></small>

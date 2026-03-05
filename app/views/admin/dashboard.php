@@ -25,6 +25,34 @@
             height: 100%;
             border-radius: 4px;
         }
+        
+        /* New additions for modern dashboard */
+        .dashboard-header {
+            background: rgba(255, 255, 255, 0.8) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            margin: -32px -32px 32px -32px !important; /* Offset main-content padding */
+            padding: 24px 32px !important;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-base {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
 <body>
