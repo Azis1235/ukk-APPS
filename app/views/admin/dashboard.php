@@ -24,10 +24,52 @@
         .progress-bar-fill {
             height: 100%;
             border-radius: 4px;
+        /* Enhanced matching home.php */
+        body {
+            background-color: #f8fafc;
         }
         
-        /* New additions for modern dashboard */
-        /* Enhanced matching home.php */
+        /* Light Sidebar Override */
+        .sidebar {
+            background-color: #ffffff;
+            border-right: 1px solid #f1f5f9;
+            box-shadow: none;
+        }
+        
+        .sidebar-header {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .sidebar-header h2 {
+            color: #0f172a !important;
+            font-weight: 800;
+        }
+
+        .logo-box {
+            background: #1e293b;
+        }
+
+        .sidebar a {
+            color: #64748b !important;
+            font-weight: 600;
+            margin-bottom: 4px;
+            border-radius: 12px;
+        }
+
+        .sidebar a:hover {
+            background-color: #f8fafc !important;
+            color: #0f172a !important;
+            transform: translateX(4px);
+        }
+
+        .sidebar a.active {
+            background-color: #eff6ff !important;
+            color: #3b82f6 !important;
+            box-shadow: none !important;
+        }
+
         .dashboard-header {
             background: rgba(255, 255, 255, 0.8) !important;
             backdrop-filter: blur(12px) !important;
@@ -35,6 +77,9 @@
             border-bottom: 1px solid #f1f5f9;
             margin: -32px -32px 32px -32px !important;
             padding: 32px 40px !important;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .dashboard-header h1 {
@@ -48,6 +93,7 @@
         .dashboard-header p {
             color: #64748b;
             font-size: 16px;
+            margin: 0;
         }
 
         .stat-card {
@@ -84,13 +130,14 @@
             font-size: 16px;
             font-weight: 600;
             color: #64748b;
+            margin-bottom: 12px;
         }
 
         .stat-card .value {
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 800;
             color: #0f172a;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
         }
 
         .card-base {
@@ -104,6 +151,28 @@
 
         .card-base:hover {
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        table th {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #f1f5f9;
+            background: transparent;
+            padding: 16px 20px;
+        }
+
+        table td {
+            color: #0f172a;
+            padding: 20px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .progress-bar-bg {
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            height: 10px;
         }
     </style>
 </head>
@@ -128,7 +197,7 @@
                 <a href="index.php?page=admin_settings">
                     <span>⚙️</span> Pengaturan
                 </a>
-                <a href="index.php?page=logout" style="margin-top: auto; background: rgba(239, 68, 68, 0.1); color: #fca5a5;" onmouseover="this.style.background='rgba(239, 68, 68, 0.2)'; this.style.color='white';" onmouseout="this.style.background='rgba(239, 68, 68, 0.1)'; this.style.color='#fca5a5';">
+                <a href="index.php?page=logout" style="margin-top: auto; background: #fef2f2 !important; color: #ef4444 !important; font-weight: 600;" onmouseover="this.style.background='#fee2e2' !important;" onmouseout="this.style.background='#fef2f2' !important;">
                     <span>🚪</span> Logout
                 </a>
             </nav>
@@ -141,9 +210,9 @@
                     <h1>Dashboard</h1>
                     <p>Ringkasan aktivitas pengaduan sekolah.</p>
                 </div>
-                <div class="user-profile">
-                    <span style="font-weight: 500; font-size: 13px;">Administrator</span>
-                    <div class="avatar">A</div>
+                <div class="user-profile" style="background: #ffffff; border: 1px solid #e2e8f0; padding: 6px 12px 6px 20px;">
+                    <span style="font-weight: 600; font-size: 14px; color: #0f172a;">Administrator</span>
+                    <div class="avatar" style="background: #1e293b; font-weight: 700;">A</div>
                 </div>
             </header>
 
