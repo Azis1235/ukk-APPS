@@ -25,76 +25,13 @@
             height: 100%;
             border-radius: 4px;
         }
-        /* Enhanced matching home.php */
+
         body {
             background-color: #f8fafc;
-        }
-        
-        /* Light Sidebar Override */
-        .sidebar {
-            background-color: #ffffff;
-            border-right: 1px solid #f1f5f9;
-            box-shadow: none;
-        }
-        
-        .sidebar-header {
-            margin-bottom: 32px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .sidebar-header h2 {
-            color: #0f172a !important;
-            font-weight: 800;
-        }
-
-        .logo-box {
-            background: #1e293b;
-        }
-
-        .sidebar a {
-            color: #64748b !important;
-            font-weight: 600;
-            margin-bottom: 4px;
-            border-radius: 12px;
-        }
-
-        .sidebar a:hover {
-            background-color: #f8fafc !important;
-            color: #0f172a !important;
-            transform: translateX(4px);
-        }
-
-        .sidebar a.active {
-            background-color: #eff6ff !important;
-            color: #3b82f6 !important;
-            box-shadow: none !important;
-        }
-
-        .dashboard-header {
-            background: rgba(255, 255, 255, 0.8) !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
-            border-bottom: 1px solid #f1f5f9;
-            margin: -32px -32px 32px -32px !important;
-            padding: 32px 40px !important;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .dashboard-header h1 {
-            font-size: 32px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: #0f172a;
-            margin-bottom: 8px;
-        }
-
-        .dashboard-header p {
-            color: #64748b;
-            font-size: 16px;
             margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            color: #0f172a;
         }
 
         .stat-card {
@@ -127,31 +64,17 @@
             border-color: #e2e8f0;
         }
 
-        .stat-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            color: #64748b;
-            margin-bottom: 12px;
-        }
-
-        .stat-card .value {
-            font-size: 40px;
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: -1.5px;
-        }
-
         .card-base {
             background: #ffffff;
             border: 1px solid #f1f5f9;
             border-radius: 24px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             padding: 32px;
-            transition: all 0.3s ease;
         }
 
-        .card-base:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
 
         table th {
@@ -162,63 +85,63 @@
             border-bottom: 2px solid #f1f5f9;
             background: transparent;
             padding: 16px 20px;
+            text-align: left;
         }
 
         table td {
             color: #0f172a;
             padding: 20px;
             border-bottom: 1px solid #f1f5f9;
+            font-size: 14px;
         }
-
-        .progress-bar-bg {
-            background-color: #f1f5f9;
-            border-radius: 8px;
-            height: 10px;
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
         }
+        .badge-pending { background-color: #fef3c7; color: #d97706; }
+        .badge-proses { background-color: #e0f2fe; color: #0284c7; }
+        .badge-selesai { background-color: #d1fae5; color: #059669; }
     </style>
 </head>
-<body>
-    <div class="app-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo-box">S</div>
-                <h2>SchoolVoice</h2>
+<body style="background-color: #f8fafc;">
+    <!-- Top Navigation Bar Matching Siswa Dashboard -->
+    <div style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); position: sticky; top: 0; z-index: 50;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: 700; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+                <span style="background: #3b82f6; color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">A</span>
+                SchoolVoice
             </div>
-            <nav>
-                <a href="index.php?page=admin_dashboard" class="active">
-                    <span>📊</span> Dashboard
-                </a>
-                <a href="index.php?page=admin_aspirasi">
-                    <span>📁</span> Data Aspirasi
-                </a>
-                <a href="index.php?page=admin_users">
-                    <span>👥</span> Data Pengguna
-                </a>
-                <a href="index.php?page=admin_settings">
-                    <span>⚙️</span> Pengaturan
-                </a>
-                <a href="index.php?page=logout" style="margin-top: auto; background: #fef2f2 !important; color: #ef4444 !important; font-weight: 600;" onmouseover="this.style.background='#fee2e2' !important;" onmouseout="this.style.background='#fef2f2' !important;">
-                    <span>🚪</span> Logout
-                </a>
+            
+            <nav style="display: flex; gap: 32px; align-items: center;">
+                <a href="index.php?page=admin_dashboard" style="text-decoration: none; color: #3b82f6; font-weight: 600; font-size: 14px;">Dashboard</a>
+                <a href="index.php?page=admin_aspirasi" style="text-decoration: none; color: #64748b; font-weight: 500; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#0f172a'" onmouseout="this.style.color='#64748b'">Data Aspirasi</a>
+                <a href="index.php?page=admin_users" style="text-decoration: none; color: #64748b; font-weight: 500; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#0f172a'" onmouseout="this.style.color='#64748b'">Data Pengguna</a>
             </nav>
-        </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="dashboard-header fade-in">
-                <div>
-                    <h1>Dashboard</h1>
-                    <p>Ringkasan aktivitas pengaduan sekolah.</p>
-                </div>
-                <div class="user-profile" style="background: #ffffff; border: 1px solid #e2e8f0; padding: 6px 12px 6px 20px;">
-                    <span style="font-weight: 600; font-size: 14px; color: #0f172a;">Administrator</span>
-                    <div class="avatar" style="background: #1e293b; font-weight: 700;">A</div>
-                </div>
-            </header>
+            <div style="display: flex; gap: 24px; align-items: center;">
+                <span style="font-size: 14px; font-weight: 500; color: #0f172a;">Administrator</span>
+                <a href="index.php?page=logout" style="text-decoration: none; color: #ef4444; font-weight: 600; display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 8px 16px; background: #fef2f2; border: 1px solid #fee2e2; border-radius: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ef4444'; this.style.color='white'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#fef2f2'; this.style.color='#ef4444'; this.style.transform='translateY(0)';">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-            <!-- Stats Cards Simplification -->
-            <section class="stats-grid fade-in" style="animation-delay: 0.1s;">
+    <!-- Main Content -->
+    <main style="max-width: 1200px; margin: 40px auto; padding: 0 24px; padding-bottom: 80px;">
+        <header style="margin-bottom: 40px;">
+            <h1 style="font-size: 32px; font-weight: 800; letter-spacing: -1px; color: #0f172a; margin-bottom: 8px;">Dashboard Area</h1>
+            <p style="color: #64748b; font-size: 16px; margin: 0;">Ringkasan aktivitas dan seluruh pengaduan laporan sarana sekolah.</p>
+        </header>
+
+        <!-- Stats Cards Simplification -->
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 32px;" class="fade-in">
                 <div class="stat-card">
                     <div style="font-size: 32px; margin-bottom: 16px;">📁</div>
                     <h3 style="margin-bottom: 8px;">Total Aspirasi</h3>
@@ -241,7 +164,7 @@
                 </div>
             </section>
 
-            <section class="charts-container fade-in" style="animation-delay: 0.2s;">
+            <section style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;" class="fade-in">
                 <!-- Recent Aspirations Table -->
                 <div class="card-base" style="margin-bottom: 0;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
@@ -330,7 +253,7 @@
                 </div>
             </section>
         </main>
-    </div>
+    </main>
 
     <!-- Modal remains the same -->
     <div id="feedbackModal" class="modal-overlay">
