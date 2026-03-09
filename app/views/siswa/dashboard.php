@@ -139,6 +139,13 @@
 
         @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
         .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+
+        /* Modal View Image */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px); z-index: 100; align-items: center; justify-content: center; }
+        .modal-content { background: white; width: 100%; max-width: 600px; border-radius: 24px; padding: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); position: relative; }
+        .modal-close { position: absolute; top: 12px; right: 20px; font-size: 32px; color: #94a3b8; cursor: pointer; z-index: 10; transition: color 0.2s; }
+        .modal-close:hover { color: #0f172a; }
+        #previewImage { width: 100%; border-radius: 16px; display: block; }
     </style>
 </head>
 <body>
@@ -221,10 +228,10 @@
                             <?php echo htmlspecialchars($row['nama_kategori']); ?>
                         </div>
                         <?php if ($row['fotobukti']): ?>
-                        <a href="public/uploads/<?php echo $row['fotobukti']; ?>" target="_blank" class="btn-photo">
+                        <button type="button" class="btn-photo" onclick="showImage('<?php echo $row['fotobukti']; ?>')">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                             Lihat Foto
-                        </a>
+                        </button>
                         <?php endif; ?>
                     </div>
 
@@ -242,6 +249,40 @@
 
         <?php endif; ?>
     </div>
+
+    <!-- Modal View Image -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content fade-in">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="previewImage" src="">
+        </div>
+    </div>
+
+    <script>
+        function showImage(src) {
+            const modal = document.getElementById('imageModal');
+            const img = document.getElementById('previewImage');
+            
+            // Handle Base64 vs Physical path
+            if(src.startsWith('data:')){
+                img.src = src;
+            } else {
+                img.src = 'public/uploads/' + src;
+            }
+            
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        // Close on click outside
+        window.onclick = function(e) {
+            const modal = document.getElementById('imageModal');
+            if (e.target == modal) closeModal();
+        }
+    </script>
 
 </body>
 </html>
