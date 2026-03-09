@@ -16,10 +16,6 @@
             </div>
             <div style="display: flex; gap: 12px; align-items: center;">
                 <span style="font-size: 14px; font-weight: 500; color: #64748b;">Halo, <?php echo $_SESSION['nama_lengkap']; ?></span>
-                <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: #3b82f6; font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 9px 18px; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);" onmouseover="this.style.background='#2563eb'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(59, 130, 246, 0.35)';" onmouseout="this.style.background='#3b82f6'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.25)';">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    <span>Tambah Aspirasi</span>
-                </a>
                 <a href="index.php?page=logout" style="text-decoration: none; color: #ef4444; font-weight: 600; display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 9px 18px; background: #fef2f2; border: 1px solid #fee2e2; border-radius: 10px; transition: all 0.3s ease;" onmouseover="this.style.background='#ef4444'; this.style.color='white'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(239, 68, 68, 0.2)';" onmouseout="this.style.background='#fef2f2'; this.style.color='#ef4444'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                     <span>Logout</span>
