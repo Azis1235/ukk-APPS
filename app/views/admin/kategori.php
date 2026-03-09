@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Pengguna - SchoolVoice</title>
+    <title>Data Kategori - SchoolVoice</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
@@ -76,7 +76,7 @@
         }
         .btn-add:hover { background: #2563eb; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(59,130,246,0.3); }
 
-        /* User Card/Table */
+        /* Card/Table */
         .card { background: white; border-radius: 24px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); padding: 0; overflow: hidden; }
         
         table { width: 100%; border-collapse: collapse; }
@@ -85,18 +85,13 @@
         tr:last-child td { border-bottom: none; }
         tr:hover td { background: #fbfcfd; }
 
-        .user-info { display: flex; align-items: center; gap: 14px; }
-        .avatar {
+        .item-info { display: flex; align-items: center; gap: 14px; }
+        .icon-box {
             width: 40px; height: 40px; border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 16px;
+            background: #eff6ff; color: #3b82f6;
+            font-size: 18px;
         }
-        .avatar.admin { background: #eff6ff; color: #3b82f6; }
-        .avatar.siswa { background: #f8fafc; color: #64748b; border: 1.5px solid #e2e8f0; }
-
-        .badge { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 50px; font-size: 12px; font-weight: 700; }
-        .badge-admin { background: #dbeafe; color: #1e40af; }
-        .badge-siswa { background: #f1f5f9; color: #475569; }
 
         .action-btns { display: flex; gap: 10px; }
         .btn-edit {
@@ -143,8 +138,8 @@
             <div class="nav-links">
                 <a href="index.php?page=admin_dashboard">Dashboard</a>
                 <a href="index.php?page=admin_aspirasi">Data Aspirasi</a>
-                <a href="index.php?page=admin_users" class="active">Data Pengguna</a>
-                <a href="index.php?page=admin_categories">Data Kategori</a>
+                <a href="index.php?page=admin_users">Data Pengguna</a>
+                <a href="index.php?page=admin_categories" class="active">Data Kategori</a>
             </div>
 
             <div class="user-menu">
@@ -160,12 +155,12 @@
     <div class="container fade-in">
         <header class="header-section">
             <div>
-                <h1>Data Pengguna</h1>
-                <p>Kelola otoritas akses sistem melalui manajemen akun siswa dan admin.</p>
+                <h1>Data Kategori</h1>
+                <p>Kelola kategori laporan untuk mempermudah pengelompokan aspirasi siswa.</p>
             </div>
             <button class="btn-add" onclick="openModal('addModal')">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                Tambah Pengguna
+                Tambah Kategori
             </button>
         </header>
 
@@ -173,43 +168,31 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Identitas Pengguna</th>
-                        <th>Username</th>
-                        <th>Peran / Role</th>
-                        <th>Aksi Kelola</th>
+                        <th style="width: 80px;">ID</th>
+                        <th>Nama Kategori</th>
+                        <th style="width: 200px;">Aksi Kelola</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($users as $user): ?>
+                    <?php foreach ($categories as $cat): ?>
                     <tr>
+                        <td><span style="font-family: monospace; font-weight: 700; color: #94a3b8;">#<?php echo $cat['id']; ?></span></td>
                         <td>
-                            <div class="user-info">
-                                <div class="avatar <?php echo $user['role']; ?>">
-                                    <?php echo strtoupper(substr($user['nama_lengkap'], 0, 1)); ?>
-                                </div>
-                                <div style="font-weight: 700; color: #0f172a;"><?php echo htmlspecialchars($user['nama_lengkap']); ?></div>
+                            <div class="item-info">
+                                <div class="icon-box">📂</div>
+                                <div style="font-weight: 700; color: #0f172a;"><?php echo htmlspecialchars($cat['nama_kategori']); ?></div>
                             </div>
-                        </td>
-                        <td style="font-family: monospace; color: #64748b; font-weight: 600;"><?php echo htmlspecialchars($user['username']); ?></td>
-                        <td>
-                            <span class="badge badge-<?php echo $user['role']; ?>">
-                                <?php echo ucfirst($user['role']); ?>
-                            </span>
                         </td>
                         <td>
                             <div class="action-btns">
-                                <button class="btn-edit" onclick="editUser(<?php echo htmlspecialchars(json_encode($user)); ?>)">
+                                <button class="btn-edit" onclick="editCategory(<?php echo htmlspecialchars(json_encode($cat)); ?>)">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                                     Edit
                                 </button>
-                                <?php if($user['id'] != $_SESSION['user_id']): ?>
-                                <a href="index.php?page=delete_user&id=<?php echo $user['id']; ?>" class="btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus pengguna ini?')">
+                                <a href="index.php?page=delete_category&id=<?php echo $cat['id']; ?>" class="btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini? Semua aspirasi dalam kategori ini akan terhapus!')">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
                                     Hapus
                                 </a>
-                                <?php else: ?>
-                                <span style="font-size: 12px; font-weight: 600; color: #94a3b8; padding-left: 8px;">(Sesi Aktif)</span>
-                                <?php endif; ?>
                             </div>
                         </td>
                     </tr>
@@ -219,70 +202,40 @@
         </main>
     </div>
 
-    <!-- Modal Add User -->
+    <!-- Modal Add Category -->
     <div id="addModal" class="modal">
         <div class="modal-content fade-in">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-                <h3 style="font-size: 18px; font-weight: 700;">Daftarkan Pengguna Baru</h3>
+                <h3 style="font-size: 18px; font-weight: 700;">Tambah Kategori Baru</h3>
                 <span style="font-size: 24px; cursor: pointer; color: #94a3b8;" onclick="closeModal('addModal')">&times;</span>
             </div>
             
-            <form action="index.php?page=store_user" method="POST">
+            <form action="index.php?page=store_category" method="POST">
                 <div class="form-group">
-                    <label>Nama Lengkap</label>
-                    <input type="text" name="nama_lengkap" class="form-control" required placeholder="Contoh: Budi Santoso">
-                </div>
-                <div class="form-group">
-                    <label>Username (Gunakan Tanpa Spasi)</label>
-                    <input type="text" name="username" class="form-control" required placeholder="budi_123">
-                </div>
-                <div class="form-group">
-                    <label>Kata Sandi</label>
-                    <input type="password" name="password" class="form-control" required placeholder="••••••••">
-                </div>
-                <div class="form-group">
-                    <label>Otoritas Role</label>
-                    <select name="role" class="form-control">
-                        <option value="siswa">Siswa (Akses Lapor)</option>
-                        <option value="admin">Admin (Akses Kelola)</option>
-                    </select>
+                    <label>Nama Kategori</label>
+                    <input type="text" name="nama_kategori" class="form-control" required placeholder="Contoh: Fasilitas Kelas">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-cancel" onclick="closeModal('addModal')">Batal</button>
-                    <button type="submit" class="btn-save">Simpan Pengguna</button>
+                    <button type="submit" class="btn-save">Simpan Kategori</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Modal Edit User -->
+    <!-- Modal Edit Category -->
     <div id="editModal" class="modal">
         <div class="modal-content fade-in">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-                <h3 style="font-size: 18px; font-weight: 700;">Ubah Data Pengguna</h3>
+                <h3 style="font-size: 18px; font-weight: 700;">Ubah Nama Kategori</h3>
                 <span style="font-size: 24px; cursor: pointer; color: #94a3b8;" onclick="closeModal('editModal')">&times;</span>
             </div>
             
-            <form action="index.php?page=update_user" method="POST">
-                <input type="hidden" name="user_id" id="edit_user_id">
+            <form action="index.php?page=update_category" method="POST">
+                <input type="hidden" name="id_kategori" id="edit_id_kategori">
                 <div class="form-group">
-                    <label>Nama Lengkap</label>
-                    <input type="text" name="nama_lengkap" id="edit_nama_lengkap" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" name="username" id="edit_username" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>Kata Sandi Baru (Kosongkan jika tidak diganti)</label>
-                    <input type="password" name="password" class="form-control" placeholder="••••••••">
-                </div>
-                <div class="form-group">
-                    <label>Otoritas Role</label>
-                    <select name="role" id="edit_role" class="form-control">
-                        <option value="siswa">Siswa</option>
-                        <option value="admin">Admin</option>
-                    </select>
+                    <label>Nama Kategori</label>
+                    <input type="text" name="nama_kategori" id="edit_nama_kategori" class="form-control" required>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-cancel" onclick="closeModal('editModal')">Batal</button>
@@ -296,12 +249,10 @@
         function openModal(id) { document.getElementById(id).style.display = "flex"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; }
         
-        function editUser(user) {
+        function editCategory(cat) {
             openModal('editModal');
-            document.getElementById('edit_user_id').value = user.id;
-            document.getElementById('edit_nama_lengkap').value = user.nama_lengkap;
-            document.getElementById('edit_username').value = user.username;
-            document.getElementById('edit_role').value = user.role;
+            document.getElementById('edit_id_kategori').value = cat.id;
+            document.getElementById('edit_nama_kategori').value = cat.nama_kategori;
         }
 
         window.onclick = function(e) {

@@ -124,6 +124,31 @@ switch ($page) {
         $admin->changePassword();
         break;
 
+    // --- Manajemen Kategori ---
+    case 'admin_categories':
+        require_once 'app/controllers/AdminController.php';
+        $admin = new AdminController();
+        $admin->categories();
+        break;
+
+    case 'store_category':
+        require_once 'app/controllers/AdminController.php';
+        $admin = new AdminController();
+        $admin->storeCategory();
+        break;
+
+    case 'update_category':
+        require_once 'app/controllers/AdminController.php';
+        $admin = new AdminController();
+        $admin->updateCategory();
+        break;
+
+    case 'delete_category':
+        require_once 'app/controllers/AdminController.php';
+        $admin = new AdminController();
+        $admin->deleteCategory();
+        break;
+
     default:
         echo "404 Page Not Found";
         break;

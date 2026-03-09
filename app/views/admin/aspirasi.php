@@ -137,6 +137,7 @@
                 <a href="index.php?page=admin_dashboard">Dashboard</a>
                 <a href="index.php?page=admin_aspirasi" class="active">Data Aspirasi</a>
                 <a href="index.php?page=admin_users">Data Pengguna</a>
+                <a href="index.php?page=admin_categories">Data Kategori</a>
             </div>
 
             <div class="user-menu">

@@ -157,5 +157,39 @@ class AdminController {
             header("Location: index.php?page=admin_aspirasi");
         }
     }
+
+    // --- Manajemen Kategori ---
+    public function categories() {
+        $kategoriModel = new KategoriModel($this->db);
+        $categories = $kategoriModel->getAll();
+        include __DIR__ . '/../views/admin/kategori.php';
+    }
+
+    public function storeCategory() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $kategoriModel = new KategoriModel($this->db);
+            $nama = $_POST['nama_kategori'];
+            $kategoriModel->create($nama);
+            header("Location: index.php?page=admin_categories");
+        }
+    }
+
+    public function updateCategory() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $kategoriModel = new KategoriModel($this->db);
+            $id = $_POST['id_kategori'];
+            $nama = $_POST['nama_kategori'];
+            $kategoriModel->update($id, $nama);
+            header("Location: index.php?page=admin_categories");
+        }
+    }
+
+    public function deleteCategory() {
+        if (isset($_GET['id'])) {
+            $kategoriModel = new KategoriModel($this->db);
+            $kategoriModel->delete($_GET['id']);
+            header("Location: index.php?page=admin_categories");
+        }
+    }
 }
 ?>
