@@ -27,6 +27,14 @@ class SiswaController {
 
         $database = new Database();
         $this->db = $database->getConnection();
+        
+        // Migration: Expand fotobukti column to accommodate Base64 data
+        try {
+            $this->db->exec("ALTER TABLE aspirasi MODIFY fotobukti LONGTEXT");
+        } catch (Exception $e) {
+            // Silently fail if column is already modified or if user lacks permissions
+        }
+
         $this->aspirasiModel = new AspirasiModel($this->db);
         $this->kategoriModel = new KategoriModel($this->db);
     }
@@ -43,7 +51,7 @@ class SiswaController {
         include __DIR__ . '/../views/siswa/form_aspirasi.php';
     }
 
-    // Menyimpan data laporan baru ke database (termasuk upload foto)
+    // Menyimpan data laporan baru ke database (menggunakan Base64 untuk foto)
     public function store() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $user_id = $_SESSION['user_id'];
@@ -53,17 +61,14 @@ class SiswaController {
             $lokasi = $_POST['lokasi'];
             $foto = null;
 
-            // Upload foto jika ada
+            // Handle Photo as Base64 (Vercel compatible)
             if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
-                $target_dir = "public/uploads/";
-                if (!file_exists($target_dir)) {
-                    mkdir($target_dir, 0777, true);
-                }
-                $file_name = time() . "_" . basename($_FILES["foto"]["name"]);
-                $target_file = $target_dir . $file_name;
-                
-                if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
-                    $foto = $file_name;
+                // Limit size to 1MB to avoid database bloat and performance issues
+                if ($_FILES['foto']['size'] <= 1048576) {
+                    $image_data = file_get_contents($_FILES['foto']['tmp_name']);
+                    $base64 = base64_encode($image_data);
+                    $mime = $_FILES['foto']['type'];
+                    $foto = "data:$mime;base64,$base64";
                 }
             }
 
