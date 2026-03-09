@@ -148,7 +148,7 @@
         }
 
         .logo-box {
-            background: #1e293b;
+            background: #3b82f6;
             color: white;
             width: 32px;
             height: 32px;

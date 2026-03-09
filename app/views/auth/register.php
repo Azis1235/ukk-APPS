@@ -43,7 +43,7 @@
         }
 
         .reg-icon {
-            background: #1e293b;
+            background: #3b82f6;
             color: white;
             width: 60px;
             height: 60px;

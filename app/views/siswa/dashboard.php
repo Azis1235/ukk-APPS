@@ -27,10 +27,10 @@
             display: flex; align-items: center; gap: 8px;
         }
         .logo-box {
-            background: #1e293b; color: white;
+            background: #3b82f6; color: white;
             width: 32px; height: 32px; border-radius: 8px;
             display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 15px;
+            font-weight: 800; font-size: 15px;
         }
         .nav-right { display: flex; align-items: center; gap: 12px; }
         .nav-hello { font-size: 14px; font-weight: 500; color: #64748b; }
