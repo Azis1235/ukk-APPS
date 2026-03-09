@@ -10,13 +10,13 @@
 <body style="background-color: #f8fafc;">
     <div style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); position: sticky; top: 0; z-index: 50;">
         <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-weight: 700; font-size: 18px; color: var(--text-primary); display: flex; align-items: center; gap: 8px;">
-                <span style="background: var(--sidebar-bg); color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">S</span>
+            <div style="font-weight: 700; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+                <span style="background: #1e293b; color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">S</span>
                 SchoolVoice
             </div>
             <div style="display: flex; gap: 12px; align-items: center;">
-                <span style="font-size: 14px; font-weight: 500; color: var(--text-secondary);">Halo, <?php echo $_SESSION['nama_lengkap']; ?></span>
-                <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 9px 18px; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);" onmouseover="this.style.background='var(--accent-hover)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(59, 130, 246, 0.35)';" onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.25)';">
+                <span style="font-size: 14px; font-weight: 500; color: #64748b;">Halo, <?php echo $_SESSION['nama_lengkap']; ?></span>
+                <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: #3b82f6; font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 9px 18px; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);" onmouseover="this.style.background='#2563eb'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(59, 130, 246, 0.35)';" onmouseout="this.style.background='#3b82f6'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.25)';">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                     <span>Tambah Aspirasi</span>
                 </a>
@@ -30,17 +30,17 @@
 
     <div class="container" style="max-width: 800px; margin: 40px auto; padding: 0 24px; padding-bottom: 80px;">
         <header style="margin-bottom: 40px; text-align: center;">
-            <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Laporan Saya</h1>
-            <p style="color: var(--text-secondary);">Pantau status pengaduan sarana dan prasarana sekolahmu disini.</p>
+            <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 8px; color: #0f172a;">Laporan Saya</h1>
+            <p style="color: #64748b;">Pantau status pengaduan sarana dan prasarana sekolahmu disini.</p>
         </header>
 
         <div class="timeline-container fade-in">
             <?php if (empty($aspirasi_list)): ?>
                 <div style="text-align: center; padding: 60px 0;">
                     <div style="font-size: 56px; margin-bottom: 20px;">📝</div>
-                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--text-primary);">Belum ada laporan</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 28px; font-size: 14px;">Kamu belum pernah mengirimkan laporan kerusakan fasilitas.</p>
-                    <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: var(--accent); font-weight: 700; padding: 15px 36px; border-radius: 14px; display: inline-flex; align-items: center; gap: 10px; font-size: 15px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);" onmouseover="this.style.background='var(--accent-hover)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 28px rgba(59, 130, 246, 0.45)';" onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(59, 130, 246, 0.35)';">
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #0f172a;">Belum ada laporan</h3>
+                    <p style="color: #64748b; margin-bottom: 28px; font-size: 14px;">Kamu belum pernah mengirimkan laporan kerusakan fasilitas.</p>
+                    <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: #3b82f6; font-weight: 700; padding: 15px 36px; border-radius: 14px; display: inline-flex; align-items: center; gap: 10px; font-size: 15px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);" onmouseover="this.style.background='#2563eb'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 28px rgba(59, 130, 246, 0.45)';" onmouseout="this.style.background='#3b82f6'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(59, 130, 246, 0.35)';">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                         Tambah Aspirasi
                     </a>
