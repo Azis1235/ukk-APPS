@@ -24,7 +24,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Inter', sans-serif;
             background: var(--bg-color);
             position: relative;
             color: var(--text-primary);

@@ -6,7 +6,7 @@
     <title>Dashboard Siswa - SchoolVoice</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         body { background-color: #f8fafc; color: #0f172a; line-height: 1.5; font-size: 14px; }
 
         /* Navbar */
