@@ -17,6 +17,8 @@
             --border-color: #f1f5f9;
         }
 
+        * { font-family: 'Inter', sans-serif; }
+
         body.register-body {
             margin: 0;
             padding: 0;
@@ -24,7 +26,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Inter', sans-serif;
             background: var(--bg-color);
             position: relative;
             color: var(--text-primary);

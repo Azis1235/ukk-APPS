@@ -17,6 +17,8 @@
             --border-color: #f1f5f9;
         }
 
+        * { font-family: 'Inter', sans-serif; }
+
         body.login-siswa {
             margin: 0;
             padding: 0;
