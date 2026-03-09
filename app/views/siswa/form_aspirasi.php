@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tulis Aspirasi - Pengaduan Sekolah</title>
+    <title>Buat Laporan - SchoolVoice</title>
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
 </head>
 <body style="background-color: #f8fafc;">
     <div style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); position: sticky; top: 0; z-index: 50;">
@@ -25,11 +24,11 @@
     <div class="container" style="max-width: 700px; margin: 60px auto; padding: 0 24px;">
         <div class="fade-in">
             <header style="margin-bottom: 32px;">
-                <h1 style="font-size: 28px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; letter-spacing: -0.5px;">Buat Laporan</h1>
-                <p style="color: var(--text-secondary); font-size: 15px;">Sampaikan aspirasi atau keluhanmu dengan detail agar segera kami tindak lanjuti.</p>
+                <h1 style="font-size: 32px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; letter-spacing: -1px;">Buat Laporan</h1>
+                <p style="color: var(--text-secondary); font-size: 15px; margin: 0;">Sampaikan keluhanmu dengan detail agar segera kami tindak lanjuti.</p>
             </header>
 
-            <div class="card-base" style="background: #ffffff; padding: 40px; border-radius: 16px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+            <div class="card-base" style="background: #ffffff; padding: 40px; border-radius: 24px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
                 <form action="index.php?page=store_aspirasi" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="judul">Judul Laporan</label>
@@ -71,8 +70,9 @@
                     </div>
 
                     <div style="margin-top: 40px;">
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; justify-content: center; font-size: 16px; font-weight: 700; border-radius: 12px; box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                            🚀 Kirim Laporan Sekarang
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; justify-content: center; font-size: 15px; font-weight: 700; border-radius: 12px; gap: 10px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            Kirim Laporan Sekarang
                         </button>
                     </div>
                 </form>

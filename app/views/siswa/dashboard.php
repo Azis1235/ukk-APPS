@@ -36,7 +36,7 @@
                     <div style="font-size: 48px; margin-bottom: 16px;">📝</div>
                     <h3 style="font-weight: 600; margin-bottom: 8px;">Belum ada laporan</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 24px;">Kamu belum pernah mengirimkan laporan kerusakan fasilitas.</p>
-                    <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: var(--sidebar-bg); font-weight: 700; padding: 14px 32px; border-radius: 12px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);" onmouseover="this.style.background='#334155'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='var(--sidebar-bg)'; this.style.transform='translateY(0)';">
+                    <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: var(--accent); font-weight: 700; padding: 14px 32px; border-radius: 12px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='var(--accent-hover)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.4)';" onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(59, 130, 246, 0.3)';">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                         Buat Laporan Sekarang
                     </a>
@@ -90,8 +90,9 @@
         </div>
     </div>
 
-    <a href="index.php?page=tambah_aspirasi" style="position: fixed; bottom: 32px; right: 32px; background: var(--sidebar-bg); color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: var(--shadow); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-        +
+    <a href="index.php?page=tambah_aspirasi" style="position: fixed; bottom: 32px; right: 32px; background: var(--accent); color: white; height: 52px; padding: 0 22px; border-radius: 26px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35); transition: all 0.3s ease; font-weight: 700; font-size: 14px;" onmouseover="this.style.background='var(--accent-hover)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.45)';" onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(59, 130, 246, 0.35)';">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>Buat Laporan</span>
     </a>
 </body>
 </html>
