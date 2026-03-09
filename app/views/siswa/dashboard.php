@@ -33,10 +33,10 @@
         <div class="timeline-container fade-in">
             <?php if (empty($aspirasi_list)): ?>
                 <div style="text-align: center; padding: 60px 0;">
-                    <div style="font-size: 48px; margin-bottom: 16px;">📝</div>
-                    <h3 style="font-weight: 600; margin-bottom: 8px;">Belum ada laporan</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 24px;">Kamu belum pernah mengirimkan laporan kerusakan fasilitas.</p>
-                    <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: var(--accent); font-weight: 700; padding: 14px 32px; border-radius: 12px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='var(--accent-hover)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.4)';" onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(59, 130, 246, 0.3)';">
+                    <div style="font-size: 56px; margin-bottom: 20px;">📝</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--text-primary);">Belum ada laporan</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 28px; font-size: 14px;">Kamu belum pernah mengirimkan laporan kerusakan fasilitas.</p>
+                    <a href="index.php?page=tambah_aspirasi" style="text-decoration: none; color: white; background: var(--accent); font-weight: 700; padding: 15px 36px; border-radius: 14px; display: inline-flex; align-items: center; gap: 10px; font-size: 15px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);" onmouseover="this.style.background='var(--accent-hover)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 28px rgba(59, 130, 246, 0.45)';" onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(59, 130, 246, 0.35)';">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                         Buat Laporan Sekarang
                     </a>
@@ -90,9 +90,5 @@
         </div>
     </div>
 
-    <a href="index.php?page=tambah_aspirasi" style="position: fixed; bottom: 32px; right: 32px; background: var(--accent); color: white; height: 52px; padding: 0 22px; border-radius: 26px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35); transition: all 0.3s ease; font-weight: 700; font-size: 14px;" onmouseover="this.style.background='var(--accent-hover)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.45)';" onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(59, 130, 246, 0.35)';">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-        <span>Buat Laporan</span>
-    </a>
 </body>
 </html>
